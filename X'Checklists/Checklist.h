@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+@class ChecklistItem;
 
-@interface Checklist : NSObject
+@interface Checklist : NSObject<NSCoding>
 
 @property (nonatomic, copy) NSString *name;
-
+@property (nonatomic, strong) NSMutableArray<ChecklistItem *> *items;
 - (instancetype)initWithName:(NSString *)name;
+
 @end
