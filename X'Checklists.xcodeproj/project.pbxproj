@@ -15,6 +15,9 @@
 		5523E1E41D827D3100D06C7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5523E1E21D827D3100D06C7A /* LaunchScreen.storyboard */; };
 		5523E1ED1D828A9600D06C7A /* ChecklistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5523E1EC1D828A9600D06C7A /* ChecklistItem.m */; };
 		5523E1F01D83873400D06C7A /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5523E1EF1D83873400D06C7A /* ItemDetailViewController.m */; };
+		556BD0E61D853CDA007F686F /* AllListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 556BD0E51D853CDA007F686F /* AllListsViewController.m */; };
+		556BD0E91D853D40007F686F /* Checklist.m in Sources */ = {isa = PBXBuildFile; fileRef = 556BD0E81D853D40007F686F /* Checklist.m */; };
+		556BD0EC1D8544A7007F686F /* ListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 556BD0EB1D8544A7007F686F /* ListDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,12 @@
 		5523E1EC1D828A9600D06C7A /* ChecklistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistItem.m; sourceTree = "<group>"; };
 		5523E1EE1D83873400D06C7A /* ItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ItemDetailViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		5523E1EF1D83873400D06C7A /* ItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ItemDetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		556BD0E41D853CDA007F686F /* AllListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllListsViewController.h; sourceTree = "<group>"; };
+		556BD0E51D853CDA007F686F /* AllListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllListsViewController.m; sourceTree = "<group>"; };
+		556BD0E71D853D40007F686F /* Checklist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Checklist.h; sourceTree = "<group>"; };
+		556BD0E81D853D40007F686F /* Checklist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Checklist.m; sourceTree = "<group>"; };
+		556BD0EA1D8544A7007F686F /* ListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDetailViewController.h; sourceTree = "<group>"; };
+		556BD0EB1D8544A7007F686F /* ListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +86,12 @@
 				5523E1D41D827D3100D06C7A /* Supporting Files */,
 				5523E1EB1D828A9600D06C7A /* ChecklistItem.h */,
 				5523E1EC1D828A9600D06C7A /* ChecklistItem.m */,
+				556BD0E71D853D40007F686F /* Checklist.h */,
+				556BD0E81D853D40007F686F /* Checklist.m */,
+				556BD0E41D853CDA007F686F /* AllListsViewController.h */,
+				556BD0E51D853CDA007F686F /* AllListsViewController.m */,
+				556BD0EA1D8544A7007F686F /* ListDetailViewController.h */,
+				556BD0EB1D8544A7007F686F /* ListDetailViewController.m */,
 			);
 			path = "X'Checklists";
 			sourceTree = "<group>";
@@ -161,9 +176,12 @@
 			files = (
 				5523E1DC1D827D3100D06C7A /* ChecklistViewController.m in Sources */,
 				5523E1D91D827D3100D06C7A /* AppDelegate.m in Sources */,
+				556BD0E61D853CDA007F686F /* AllListsViewController.m in Sources */,
+				556BD0EC1D8544A7007F686F /* ListDetailViewController.m in Sources */,
 				5523E1D61D827D3100D06C7A /* main.m in Sources */,
 				5523E1F01D83873400D06C7A /* ItemDetailViewController.m in Sources */,
 				5523E1ED1D828A9600D06C7A /* ChecklistItem.m in Sources */,
+				556BD0E91D853D40007F686F /* Checklist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +330,7 @@
 				5523E1EA1D827D3100D06C7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

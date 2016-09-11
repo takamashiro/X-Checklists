@@ -25,7 +25,7 @@
 }
 
 - (void)loadChecklistItems {
-    NSLog(@"%s",__FUNCTION__);
+    
     NSString *path = [self dataFilePath];
     if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
         NSData *data = [NSData dataWithContentsOfFile:path];
@@ -40,11 +40,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.title = self.checklist.name;
     self.tableView.rowHeight = 44;
     [self loadChecklistItems];
 
-    NSLog(@"file:%@",[self dataFilePath]);
+   
    
 }
 
