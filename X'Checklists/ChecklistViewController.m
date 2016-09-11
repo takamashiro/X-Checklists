@@ -16,46 +16,43 @@
 
 @implementation ChecklistViewController
 
+
 - (NSMutableArray *)items {
     if (_items == nil) {
         _items = [NSMutableArray array];
     }
     return _items;
 }
+
+- (void)loadChecklistItems {
+    NSLog(@"%s",__FUNCTION__);
+    NSString *path = [self dataFilePath];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        NSData *data = [NSData dataWithContentsOfFile:path];
+        if(data) {
+            NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc ]initForReadingWithData:data];
+            self.items = [unarchiver decodeObjectForKey:@"ChecklistItems"];
+        
+            [unarchiver finishDecoding];
+        }
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    ChecklistItem *item1 = [[ChecklistItem alloc] init];
-//    item1.text = @"Walk the dog";
-//    item1.checked = false;
-//    [self.items addObject:item1];
-//    
-//    ChecklistItem *item2 = [[ChecklistItem alloc] init];
-//    item2.text = @"Brush my teeth";
-//    item2.checked = false;
-//    [self.items addObject:item2];
-//    
-//    ChecklistItem *item3 = [[ChecklistItem alloc] init];
-//    item3.text = @"Learn iOS development";
-//    item3.checked = true;
-//    [self.items addObject:item3];
-//    
-//    ChecklistItem *item4 = [[ChecklistItem alloc] init];
-//    item4.text = @"Soccer practice";
-//    item4.checked = false;
-//    [self.items addObject:item4];
-//    
-//    ChecklistItem *item5 = [[ChecklistItem alloc] init];
-//    item5.text = @"Eat ice cream";
-//    item5.checked = false;
-//    [self.items addObject:item5];
 
     self.tableView.rowHeight = 44;
+    [self loadChecklistItems];
+
+    NSLog(@"file:%@",[self dataFilePath]);
+   
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"AddItem"]) {
@@ -75,6 +72,27 @@
     }
 }
 
+#pragma -mark  persist - file manager
+- (NSString *)documentsDirectory {
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDiretory = [paths firstObject];
+    return documentsDiretory;
+}
+
+
+- (NSString *)dataFilePath {
+    return [[self documentsDirectory] stringByAppendingPathComponent:@"Checklists.plist"];
+}
+
+- (void)saveChecklistItems {
+    NSMutableData *data = [NSMutableData new];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    [archiver encodeObject:self.items forKey:@"ChecklistItems"];
+    [archiver finishEncoding];
+    [data writeToFile:[self dataFilePath] atomically:YES];
+}
+#pragma -mark datasource Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.items.count;
 }
@@ -114,6 +132,11 @@
     [item toggleChecked];
     
     [self configureCheckmarkForCell:cell withChecklistItem:item];
+    [self saveChecklistItems];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+     [self saveChecklistItems];
 }
 
 #pragma -mark ItemDetailViewControllerDelegate
@@ -130,6 +153,8 @@
     NSArray *indexPaths = @[indexPath];
     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    [self saveChecklistItems];
 }
 
 - (void)itemDetailViewController:(ItemDetailViewController *)controller didFinishEditingItem:(ChecklistItem *)item {
@@ -140,6 +165,8 @@
     [self configureTextForCell:cell withChecklistItem:item];
     
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    [self saveChecklistItems];
 }
 
 @end
