@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.tableView.rowHeight = 44;
     if (self.checklistToEdit) {
         self.title = @"Edit Checklist";
         self.textField.text = self.checklistToEdit.name;

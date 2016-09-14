@@ -9,9 +9,9 @@
 #import "Checklist.h"
 
 @implementation Checklist
-- (instancetype)initWithName:(NSString *)name {
+- (instancetype)init{
     if (self = [super init]) {
-        self.name = name;
+        self.items = [[NSMutableArray alloc] initWithCapacity:20];
     }
     return self;
 }

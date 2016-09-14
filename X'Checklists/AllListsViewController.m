@@ -16,25 +16,7 @@
 
 - (NSMutableArray *)lists {
     if (_lists == nil) {
-        _lists = [NSMutableArray array];
-        
-        Checklist *list = [[Checklist alloc] init];
-        list.name = @"Birthdays";
-        [self.lists addObject:list];
-        
-        list = [[Checklist alloc] init];
-        list.name = @"Groceries";
-        [self.lists addObject:list];
-        
-        
-        list = [[Checklist alloc] init];
-        list.name = @"Cool Apps";
-        [self.lists addObject:list];
-        
-        
-        list = [[Checklist alloc] initWithName:@"To Do"];
-        [self.lists addObject:list];
-        
+        _lists = [NSMutableArray array]; 
     }
     return _lists;
 }
@@ -59,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"directory:%@",[self documentsDirectory]);
-    
+    [self loadChecklists];    
 }
 
 - (void)didReceiveMemoryWarning {

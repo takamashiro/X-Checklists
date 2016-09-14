@@ -11,29 +11,17 @@
 
 
 @interface ChecklistViewController ()
-@property (nonatomic, strong) NSMutableArray<ChecklistItem*> *items;
+
 @end
 
 @implementation ChecklistViewController
-
-
-- (NSMutableArray *)items {
-    if (_items == nil) {
-        _items = [NSMutableArray array];
-    }
-    return _items;
-}
-
-
+@synthesize checklist;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = self.checklist.name;
-    self.tableView.rowHeight = 44;
+    //self.tableView.rowHeight = 44;
     
-
-   
-   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,8 +50,11 @@
 
 
 #pragma -mark datasource Delegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.checklist.items.count;
+    return [self.checklist.items count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -118,12 +109,13 @@
 
 - (void)itemDetailViewController:(ItemDetailViewController *)controller didFinishAddingItem:(ChecklistItem *)item {
     
-    NSInteger newRowIndex = self.checklist.items.count;
+    NSInteger newRowIndex = [self.checklist.items count];
     [self.checklist.items addObject:item];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
     NSArray *indexPaths = @[indexPath];
     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     
     

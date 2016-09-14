@@ -10,5 +10,5 @@
 #import "ChecklistViewController.h"
 #import "ListDetailViewController.h"
 @interface AllListsViewController : UITableViewController<ListDetailViewControllerDelegate>
-
+- (void)saveChecklists;
 @end

@@ -13,6 +13,6 @@
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSMutableArray<ChecklistItem *> *items;
-- (instancetype)initWithName:(NSString *)name;
+//@property (nonatomic, strong) NSMutableArray *items;
 
 @end
