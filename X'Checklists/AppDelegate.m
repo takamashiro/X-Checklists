@@ -8,15 +8,21 @@
 
 #import "AppDelegate.h"
 #import "AllListsViewController.h"
+#import "DataModel.h"
 @interface AppDelegate ()
-
+@property (nonatomic, strong) DataModel *datamodel;
 @end
 
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    _datamodel = [[DataModel alloc]init];
+    UINavigationController *navigationController = (UINavigationController*)self.window.rootViewController;
+    AllListsViewController *controller = navigationController.viewControllers[0];
+    controller.dataModel = _datamodel;
     return YES;
 }
 
@@ -45,9 +51,8 @@
 }
 
 - (void)saveData {
-    UINavigationController *navigationController = (UINavigationController*)self.window.rootViewController;
-    AllListsViewController *controller = navigationController.viewControllers[0];
-    [controller saveChecklists];
+   
+    [_datamodel saveChecklists];
     
     
 }
