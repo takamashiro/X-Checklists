@@ -17,6 +17,13 @@
 }
 
 
+- (instancetype)initWithName:(NSString *)name{
+    if (self = [self init]) {
+        self.name = name;
+    }
+    return self;
+}
+
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super init])
     {

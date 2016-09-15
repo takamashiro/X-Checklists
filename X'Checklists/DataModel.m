@@ -14,8 +14,37 @@
     if (self = [super init]) {
         self.lists = [[NSMutableArray alloc] initWithCapacity:20];
         [self loadChecklists];
+        [self registerDefaults];
+        [self handleFirstTime];
     }
     return self;
+}
+
+- (void)registerDefaults {
+    NSDictionary *dictionary= @{ @"ChecklistIndex": @(-1),@"FirstTime": @YES};
+    [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
+    
+}
+
+
+- (void)handleFirstTime {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    BOOL firstTime = [userDefaults boolForKey:@"FirstTime"];
+    if(firstTime) {
+        Checklist *checklist = [[Checklist alloc]initWithName:@"List"];
+        [self.lists addObject:checklist];
+        self.indexOfSelectedChecklist = 0;
+        [userDefaults setBool:NO forKey:@"FirstTime"];
+        [userDefaults synchronize];
+    }
+}
+- (NSInteger)indexOfSelectedChecklist {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:@"ChecklistIndex"];
+}
+
+- (void)setIndexOfSelectedChecklist:(NSInteger)indexOfSelectedChecklist {
+    [[NSUserDefaults standardUserDefaults] setInteger:indexOfSelectedChecklist forKey:@"ChecklistIndex"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 #pragma -mark  persist - file manager
 

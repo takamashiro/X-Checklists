@@ -11,7 +11,7 @@
 @interface DataModel : NSObject
 
 @property (nonatomic, strong) NSMutableArray<Checklist *> *lists;
-
+@property (nonatomic, assign) NSInteger indexOfSelectedChecklist;
 - (void)saveChecklists;
 - (void)loadChecklists;
 @end

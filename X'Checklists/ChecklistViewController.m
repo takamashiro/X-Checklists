@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = self.checklist.name;
-    //self.tableView.rowHeight = 44;
+    self.tableView.rowHeight = 44;
     
 }
 
