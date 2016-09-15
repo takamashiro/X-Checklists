@@ -7,7 +7,7 @@
 //
 
 #import "Checklist.h"
-
+#import "ChecklistItem.h"
 @implementation Checklist
 - (instancetype)init{
     if (self = [super init]) {
@@ -38,4 +38,15 @@
     [aCoder encodeObject:self.items forKey:@"Items"];
 }
 
+- (NSInteger)countUncheckedItems {
+    NSInteger count = 0;
+    
+    for (ChecklistItem *item in self.items) {
+        if (!item.checked) {
+            count += 1;
+        }
+    }
+    
+    return count;
+}
 @end

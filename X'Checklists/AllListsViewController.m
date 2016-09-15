@@ -45,6 +45,8 @@
         Checklist *checklist = self.dataModel.lists[index];
         [self performSegueWithIdentifier:@"ShowChecklist" sender:checklist];
     }
+    
+    [self.tableView reloadData];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -70,9 +72,15 @@
     
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     
+    NSInteger count = checklist.countUncheckedItems;
     
-    
-    return cell;
+    if (checklist.items.count == 0) {
+        cell.detailTextLabel.text = @"(No Items)";
+    }else if (count == 0) {
+        cell.detailTextLabel.text = @"All Done!";
+    } else {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%zd Remaining",count];
+    } return cell;
 }
 
 - (UITableViewCell *)cellForTableView:(UITableView *)tableView {
@@ -81,7 +89,7 @@
     if (cell) {
         return cell;
     } else {
-        return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
 }
