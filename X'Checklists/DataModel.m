@@ -38,6 +38,10 @@
         [userDefaults synchronize];
     }
 }
+
+- (void)sortChecklists {
+    [self.lists sortUsingSelector:@selector(compare:)];
+}
 - (NSInteger)indexOfSelectedChecklist {
     return [[NSUserDefaults standardUserDefaults] integerForKey:@"ChecklistIndex"];
 }
@@ -75,10 +79,11 @@
     if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
         NSData *data = [NSData dataWithContentsOfFile:path];
         if(data) {
+            [self sortChecklists];
             NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc ]initForReadingWithData:data];
             self.lists = [unarchiver decodeObjectForKey:@"Checklists"];
-            
             [unarchiver finishDecoding];
+           
         }
     }
 }

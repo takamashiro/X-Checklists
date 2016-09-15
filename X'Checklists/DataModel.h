@@ -14,4 +14,5 @@
 @property (nonatomic, assign) NSInteger indexOfSelectedChecklist;
 - (void)saveChecklists;
 - (void)loadChecklists;
+- (void)sortChecklists;
 @end
