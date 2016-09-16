@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,12 +20,10 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PaU-AD-48v" id="07e-bI-8FH">
-                                    <frame key="frameInset" width="308" height="43.5"/>
+                                    <frame key="frameInset" width="308" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3V-fn-Uyi">
-                                            <frame key="frameInset" minX="36" minY="11" width="517" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3V-fn-Uyi">
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -37,6 +36,11 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="K3V-fn-Uyi" firstAttribute="leading" secondItem="07e-bI-8FH" secondAttribute="leadingMargin" constant="30" id="Dwc-9J-t28"/>
+                                        <constraint firstItem="K3V-fn-Uyi" firstAttribute="centerY" secondItem="07e-bI-8FH" secondAttribute="centerY" id="keh-cb-Dc9"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="K3V-fn-Uyi" secondAttribute="trailing" id="wL1-Sm-Q7h"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="U8S-dJ-7gj" kind="presentation" identifier="EditItem" trigger="accessoryAction" id="IWp-9t-QAZ"/>
@@ -75,12 +79,13 @@
                                         <rect key="frame" x="0.0" y="99" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qJJ-Le-Q0Q" id="MWg-TR-bxz">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Name of the Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ho8-9p-eKq">
-                                                    <frame key="frameInset" minX="8" minY="8" width="584" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Name of the Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ho8-9p-eKq">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="rod-hU-TTX"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -89,6 +94,11 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="ho8-9p-eKq" secondAttribute="trailing" constant="8" id="DMj-ei-HlW"/>
+                                                <constraint firstItem="ho8-9p-eKq" firstAttribute="leading" secondItem="MWg-TR-bxz" secondAttribute="leading" constant="8" id="ESF-In-EMp"/>
+                                                <constraint firstItem="ho8-9p-eKq" firstAttribute="top" secondItem="MWg-TR-bxz" secondAttribute="top" constant="7" id="jVt-be-R73"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -118,7 +128,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3sm-cr-TI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2961" y="861"/>
+            <point key="canvasLocation" x="2960.8000000000002" y="859.52023988005999"/>
         </scene>
         <!--Add Checklist-->
         <scene sceneID="15S-5y-isB">
@@ -135,12 +145,13 @@
                                         <rect key="frame" x="0.0" y="99" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NQr-Rq-yR6" id="b9u-XH-hy1">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of The Checklist" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cmL-WF-ywy">
-                                                    <frame key="frameInset" minX="8" minY="6" width="359" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of The Checklist" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cmL-WF-ywy">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="ncx-Jv-0FJ"/>
+                                                    </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -150,6 +161,11 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cmL-WF-ywy" firstAttribute="leading" secondItem="b9u-XH-hy1" secondAttribute="leading" constant="8" id="6n4-se-d8f"/>
+                                                <constraint firstAttribute="trailing" secondItem="cmL-WF-ywy" secondAttribute="trailing" constant="8" id="8Yi-FL-U2q"/>
+                                                <constraint firstItem="cmL-WF-ywy" firstAttribute="top" secondItem="b9u-XH-hy1" secondAttribute="top" constant="6" id="wnl-HS-14X"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
