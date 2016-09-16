@@ -19,6 +19,7 @@
 		556BD0E91D853D40007F686F /* Checklist.m in Sources */ = {isa = PBXBuildFile; fileRef = 556BD0E81D853D40007F686F /* Checklist.m */; };
 		556BD0EC1D8544A7007F686F /* ListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 556BD0EB1D8544A7007F686F /* ListDetailViewController.m */; };
 		559494981D89288300481C8A /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 559494971D89288300481C8A /* DataModel.m */; };
+		5594949B1D8A7C6500481C8A /* IconPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5594949A1D8A7C6500481C8A /* IconPickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		556BD0EB1D8544A7007F686F /* ListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDetailViewController.m; sourceTree = "<group>"; };
 		559494961D89288300481C8A /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		559494971D89288300481C8A /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		559494991D8A7C6500481C8A /* IconPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconPickerViewController.h; sourceTree = "<group>"; };
+		5594949A1D8A7C6500481C8A /* IconPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconPickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				5523E1EC1D828A9600D06C7A /* ChecklistItem.m */,
 				556BD0E71D853D40007F686F /* Checklist.h */,
 				556BD0E81D853D40007F686F /* Checklist.m */,
+				559494991D8A7C6500481C8A /* IconPickerViewController.h */,
+				5594949A1D8A7C6500481C8A /* IconPickerViewController.m */,
 				556BD0E41D853CDA007F686F /* AllListsViewController.h */,
 				556BD0E51D853CDA007F686F /* AllListsViewController.m */,
 				556BD0EA1D8544A7007F686F /* ListDetailViewController.h */,
@@ -135,11 +140,12 @@
 		5523E1C91D827D3100D06C7A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = takamashiro;
 				TargetAttributes = {
 					5523E1D01D827D3100D06C7A = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 2NKZFSKJ2W;
 					};
 				};
 			};
@@ -180,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5523E1DC1D827D3100D06C7A /* ChecklistViewController.m in Sources */,
+				5594949B1D8A7C6500481C8A /* IconPickerViewController.m in Sources */,
 				5523E1D91D827D3100D06C7A /* AppDelegate.m in Sources */,
 				559494981D89288300481C8A /* DataModel.m in Sources */,
 				556BD0E61D853CDA007F686F /* AllListsViewController.m in Sources */,
@@ -227,8 +234,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -250,7 +259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -271,8 +280,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -288,7 +299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -299,6 +310,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2NKZFSKJ2W;
 				INFOPLIST_FILE = "X'Checklists/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.takamashiro.X-Checklists";
@@ -310,6 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2NKZFSKJ2W;
 				INFOPLIST_FILE = "X'Checklists/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.takamashiro.X-Checklists";

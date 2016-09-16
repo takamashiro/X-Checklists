@@ -12,6 +12,8 @@
 @interface Checklist : NSObject<NSCoding>
 
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *iconName;
+
 @property (nonatomic, strong) NSMutableArray<ChecklistItem *> *items;
 
 - (instancetype)initWithName:(NSString *)name;

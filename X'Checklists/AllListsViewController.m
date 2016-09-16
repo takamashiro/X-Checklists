@@ -80,7 +80,9 @@
         cell.detailTextLabel.text = @"All Done!";
     } else {
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%zd Remaining",count];
-    } return cell;
+    }
+    cell.imageView.image = [UIImage imageNamed:checklist.iconName];
+    return cell;
 }
 
 - (UITableViewCell *)cellForTableView:(UITableView *)tableView {
@@ -129,14 +131,14 @@
 }
 
 - (void)listDetailViewController:(ListDetailViewController *)controller didFinishAddingChecklist:(Checklist *)checklist {
-    //NSInteger newRowIndex = [self.dataModel.lists count];
+    NSInteger newRowIndex = [self.dataModel.lists count];
     [self.dataModel.lists addObject:checklist];
     [self.dataModel sortChecklists];
-    [self.tableView reloadData];//整张表刷新
+    //[self.tableView reloadData];//整张表刷新
 //   单行刷新
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
-//    NSArray *indexPaths = @[indexPath];
-//    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRowIndex inSection:0];
+    NSArray *indexPaths = @[indexPath];
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

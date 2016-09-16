@@ -9,17 +9,26 @@
 #import "Checklist.h"
 #import "ChecklistItem.h"
 @implementation Checklist
+- (NSMutableArray<ChecklistItem *> *)items {
+    if (_items == nil) {
+        _items = [[NSMutableArray alloc] initWithCapacity:20];
+    }
+    return _items;
+}
 - (instancetype)init{
     if (self = [super init]) {
-        self.items = [[NSMutableArray alloc] initWithCapacity:20];
+//        self.items = [[NSMutableArray alloc] initWithCapacity:20];
+        self.iconName = @"No Icon";
     }
     return self;
 }
 
 
 - (instancetype)initWithName:(NSString *)name{
-    if (self = [self init]) {
+    if (self = [super init]) {
         self.name = name;
+        self.iconName = @"Appointments";
+
     }
     return self;
 }
@@ -29,6 +38,7 @@
     {
         self.name = [aDecoder decodeObjectForKey:@"Name"];
         self.items = [aDecoder decodeObjectForKey:@"Items"];
+        self.iconName = [aDecoder decodeObjectForKey:@"IconName"];
     }
     return self;
 }
@@ -36,6 +46,7 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.name forKey:@"Name"];
     [aCoder encodeObject:self.items forKey:@"Items"];
+    [aCoder encodeObject:self.iconName forKey:@"IconName"];
 }
 
 - (NSInteger)countUncheckedItems {
