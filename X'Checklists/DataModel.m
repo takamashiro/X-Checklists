@@ -21,7 +21,7 @@
 }
 
 - (void)registerDefaults {
-    NSDictionary *dictionary= @{ @"ChecklistIndex": @(-1),@"FirstTime": @YES};
+    NSDictionary *dictionary= @{ @"ChecklistIndex": @(-1),@"FirstTime": @YES,@"ChecklistItemID": @(0) };
     [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
     
 }
@@ -86,5 +86,16 @@
            
         }
     }
+}
+
++ (NSInteger)nextChecklistItemId
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSInteger itemId = [userDefaults integerForKey:@"ChecklistItemId"];
+    [userDefaults setInteger:itemId+1 forKey:@"ChecklistItemId"];
+    
+    [userDefaults synchronize];
+    return itemId;
 }
 @end

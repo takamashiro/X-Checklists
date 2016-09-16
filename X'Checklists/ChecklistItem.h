@@ -12,5 +12,8 @@
 
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, assign) BOOL checked;
+@property (nonatomic, strong) NSDate *dueDate;
+@property (nonatomic, assign) BOOL shouldRemind;
+@property (nonatomic, assign) NSInteger itemID;
 - (void)toggleChecked;
 @end

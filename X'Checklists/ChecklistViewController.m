@@ -71,7 +71,8 @@
 - (void)configureTextForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItem *)item
 {
     UILabel *label = (UILabel *)[cell viewWithTag:1000];
-    label.text = [NSString stringWithFormat:@"%@",item.text];
+    label.text = [NSString stringWithFormat:@"%zd:%@",item.itemID,item.text];
+    
 }
 
 - (void)configureCheckmarkForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItem *)item

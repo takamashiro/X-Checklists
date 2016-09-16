@@ -15,4 +15,7 @@
 - (void)saveChecklists;
 - (void)loadChecklists;
 - (void)sortChecklists;
+
++ (NSInteger)nextChecklistItemId;
+
 @end

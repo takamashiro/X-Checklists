@@ -23,6 +23,7 @@
     UINavigationController *navigationController = (UINavigationController*)self.window.rootViewController;
     AllListsViewController *controller = navigationController.viewControllers[0];
     controller.dataModel = _datamodel;
+  
     return YES;
 }
 
@@ -55,6 +56,10 @@
     [_datamodel saveChecklists];
     
     
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    NSLog(@"didReceiveLocalNotification %@",notification);
 }
 
 @end
