@@ -121,7 +121,7 @@
         
         item.shouldRemind = self.shouldRemindSwitch.on;
         item.dueDate = self.dueDate;
-        
+        [item scheduleNotification];
         if([self.delegate respondsToSelector:@selector(itemDetailViewController:didFinishEditingItem:)]) {
             [self.delegate itemDetailViewController:self didFinishEditingItem:item];
         }
@@ -132,7 +132,7 @@
         
         item.shouldRemind = self.shouldRemindSwitch.on;
         item.dueDate = self.dueDate;
-        
+        [item scheduleNotification];
         if([self.delegate respondsToSelector:@selector(itemDetailViewController:didFinishAddingItem:)]) {
             [self.delegate itemDetailViewController:self didFinishAddingItem:item];
         }

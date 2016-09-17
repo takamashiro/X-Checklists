@@ -16,4 +16,5 @@
 @property (nonatomic, assign) BOOL shouldRemind;
 @property (nonatomic, assign) NSInteger itemID;
 - (void)toggleChecked;
+- (void)scheduleNotification;
 @end

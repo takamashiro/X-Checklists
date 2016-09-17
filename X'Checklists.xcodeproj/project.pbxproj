@@ -142,7 +142,8 @@
 				TargetAttributes = {
 					5523E1D01D827D3100D06C7A = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 2NKZFSKJ2W;
+						DevelopmentTeam = LCAXQ4CFMG;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -298,10 +299,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2NKZFSKJ2W;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LCAXQ4CFMG;
 				INFOPLIST_FILE = "X'Checklists/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.takamashiro.X-Checklists";
+				PRODUCT_BUNDLE_IDENTIFIER = "gmail.takamashiro.X-Checklists";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -310,10 +313,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2NKZFSKJ2W;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LCAXQ4CFMG;
 				INFOPLIST_FILE = "X'Checklists/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.takamashiro.X-Checklists";
+				PRODUCT_BUNDLE_IDENTIFIER = "gmail.takamashiro.X-Checklists";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
