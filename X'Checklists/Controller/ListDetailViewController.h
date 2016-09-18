@@ -21,7 +21,7 @@
 
 @end
 
-@interface ListDetailViewController : UITableViewController
+@interface ListDetailViewController : BaseTableViewController
 
 @property (weak,nonatomic) IBOutlet UITextField *textField;
 @property (weak,nonatomic) IBOutlet UIBarButtonItem *doneBarButton;

@@ -10,7 +10,7 @@
 #import "ItemDetailViewController.h"
 #import "Checklist.h"
 
-@interface ChecklistViewController : UITableViewController<ItemDetailViewControllerDelegate>
+@interface ChecklistViewController : BaseTableViewController<ItemDetailViewControllerDelegate>
 
 @property (nonatomic, strong) Checklist *checklist;
 @end

@@ -8,8 +8,9 @@
 
 #import "AllListsViewController.h"
 #import "Checklist.h"
-@interface AllListsViewController ()
 
+@interface AllListsViewController ()
+@property (nonatomic, strong) ZFModalTransitionAnimator *animator;
 @end
 
 @implementation AllListsViewController
@@ -24,6 +25,13 @@
         UINavigationController *navigation = segue.destinationViewController;
         ListDetailViewController *controller = (ListDetailViewController *)navigation.topViewController;
         controller.delegate = self;
+        
+//        self.animator = [[ZFModalTransitionAnimator alloc] initWithModalViewController:controller];
+//        self.animator.dragable = NO;
+//        self.animator.direction = ZFModalTransitonDirectionBottom;
+//        [self.animator setContentScrollView:controller.tableView];
+//        controller.transitioningDelegate = self.animator;
+//        controller.modalPresentationStyle = UIModalPresentationCustom;
         
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         if (indexPath) {

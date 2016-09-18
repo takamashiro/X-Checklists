@@ -14,6 +14,6 @@
 
 @end
 
-@interface IconPickerViewController : UITableViewController
+@interface IconPickerViewController : BaseTableViewController
 @property (nonatomic, assign) id<IconPickerViewControllerDelegate> delegate;
 @end

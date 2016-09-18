@@ -21,7 +21,7 @@
 
 @end
 
-@interface ItemDetailViewController : UITableViewController
+@interface ItemDetailViewController : BaseTableViewController
 
 @property (nonatomic, strong) ChecklistItem *itemToEdit;
 @property (nonatomic, weak) id<ItemDetailViewControllerDelegate> delegate;
