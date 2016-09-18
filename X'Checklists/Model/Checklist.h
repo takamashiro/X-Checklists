@@ -16,6 +16,5 @@
 
 @property (nonatomic, strong) NSMutableArray<ChecklistItem *> *items;
 
-- (instancetype)initWithName:(NSString *)name;
 - (NSInteger)countUncheckedItems;
 @end

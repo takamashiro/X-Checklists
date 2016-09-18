@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
+            <connections>
+                <outlet property="lockView" destination="VUA-SO-TNE" id="NQ1-9u-bDy"/>
+                <outlet property="messageLabel" destination="NBi-Rg-VpG" id="fvz-2V-hcs"/>
+                <outlet property="view" destination="2c2-OJ-rzu" id="ksh-p0-7dX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2c2-OJ-rzu">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUA-SO-TNE" customClass="KKGestureLockView">
+                    <color key="backgroundColor" red="0.25000235659475056" green="0.79860696187780378" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="Fwg-Qx-QTk"/>
+                        <constraint firstAttribute="width" constant="250" id="RoJ-YM-Hif"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBi-Rg-VpG">
+                    <color key="backgroundColor" red="1" green="0.72377264620000004" blue="0.054194868489999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="NBi-Rg-VpG" secondAttribute="trailing" constant="15" id="0Zo-EZ-bzV"/>
+                <constraint firstItem="NBi-Rg-VpG" firstAttribute="centerX" secondItem="2c2-OJ-rzu" secondAttribute="centerX" constant="1" id="7ug-yM-j0h"/>
+                <constraint firstItem="VUA-SO-TNE" firstAttribute="centerY" secondItem="2c2-OJ-rzu" secondAttribute="centerY" constant="106.5" id="9XL-wI-hQ7"/>
+                <constraint firstItem="NBi-Rg-VpG" firstAttribute="top" secondItem="2c2-OJ-rzu" secondAttribute="top" constant="20" id="HQZ-0U-vSs"/>
+                <constraint firstItem="VUA-SO-TNE" firstAttribute="centerX" secondItem="2c2-OJ-rzu" secondAttribute="centerX" id="h21-Hs-Kfj"/>
+                <constraint firstItem="NBi-Rg-VpG" firstAttribute="leading" secondItem="2c2-OJ-rzu" secondAttribute="leading" constant="17" id="lPn-kJ-5va"/>
+            </constraints>
+            <point key="canvasLocation" x="-127.5" y="-106.5"/>
+        </view>
+    </objects>
+</document>

@@ -53,8 +53,7 @@
     {
         UILocalNotification *existingNotification = [self notificationForThisItem];
         if (existingNotification != nil) {
-            NSLog(@"Found an existing notification %@",
-                  existingNotification);
+            //NSLog(@"Found an existing notification %@",existingNotification);
             [[UIApplication sharedApplication]
              cancelLocalNotification:existingNotification];
         }

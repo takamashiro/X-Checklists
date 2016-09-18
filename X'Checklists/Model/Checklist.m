@@ -17,21 +17,13 @@
 }
 - (instancetype)init{
     if (self = [super init]) {
-//        self.items = [[NSMutableArray alloc] initWithCapacity:20];
+        self.items = [[NSMutableArray alloc] initWithCapacity:20];
         self.iconName = @"No Icon";
     }
     return self;
 }
 
 
-- (instancetype)initWithName:(NSString *)name{
-    if (self = [super init]) {
-        self.name = name;
-        self.iconName = @"Appointments";
-
-    }
-    return self;
-}
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super init])

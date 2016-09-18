@@ -98,7 +98,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    self.dataModel.indexOfSelectedChecklist = indexPath.row;
+    [self.dataModel setIndexOfSelectedChecklist:indexPath.row];
 
     Checklist *checklist = self.dataModel.lists[indexPath.row];
     [self performSegueWithIdentifier:@"ShowChecklist" sender:checklist];
@@ -158,7 +158,7 @@
 #pragma -mark UINavigationControllerDelegate
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if (viewController == self) {
-        self.dataModel.indexOfSelectedChecklist = -1;
+        [self.dataModel setIndexOfSelectedChecklist: -1];
     }
 }
 @end

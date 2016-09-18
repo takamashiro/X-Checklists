@@ -19,6 +19,10 @@
 		551FD52A1D8D66C100DD6500 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 551FD5201D8D66C100DD6500 /* DataModel.m */; };
 		5523E1D61D827D3100D06C7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5523E1D51D827D3100D06C7A /* main.m */; };
 		5523E1E11D827D3100D06C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5523E1E01D827D3100D06C7A /* Assets.xcassets */; };
+		5532F1711D8D7A0B0086FB96 /* KKGestureLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5532F1701D8D7A0B0086FB96 /* KKGestureLockView.m */; };
+		5532F1741D8D7A510086FB96 /* AppDelegate+LockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5532F1731D8D7A510086FB96 /* AppDelegate+LockView.m */; };
+		5532F17A1D8D7BA30086FB96 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5532F1791D8D7BA30086FB96 /* LoginViewController.m */; };
+		5532F17C1D8D81480086FB96 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5532F17B1D8D81480086FB96 /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,13 @@
 		5523E1D51D827D3100D06C7A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5523E1E01D827D3100D06C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5523E1E51D827D3100D06C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5532F16F1D8D7A0B0086FB96 /* KKGestureLockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKGestureLockView.h; sourceTree = "<group>"; };
+		5532F1701D8D7A0B0086FB96 /* KKGestureLockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKGestureLockView.m; sourceTree = "<group>"; };
+		5532F1721D8D7A510086FB96 /* AppDelegate+LockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+LockView.h"; sourceTree = "<group>"; };
+		5532F1731D8D7A510086FB96 /* AppDelegate+LockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+LockView.m"; sourceTree = "<group>"; };
+		5532F1781D8D7BA30086FB96 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		5532F1791D8D7BA30086FB96 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		5532F17B1D8D81480086FB96 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +74,8 @@
 			children = (
 				551FD50A1D8D66C100DD6500 /* AppDelegate.h */,
 				551FD50B1D8D66C100DD6500 /* AppDelegate.m */,
+				5532F1721D8D7A510086FB96 /* AppDelegate+LockView.h */,
+				5532F1731D8D7A510086FB96 /* AppDelegate+LockView.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -71,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				551FD50D1D8D66C100DD6500 /* Main.storyboard */,
+				5532F17B1D8D81480086FB96 /* LoginViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -78,16 +92,9 @@
 		551FD50F1D8D66C100DD6500 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				551FD5101D8D66C100DD6500 /* AllListsViewController.h */,
-				551FD5111D8D66C100DD6500 /* AllListsViewController.m */,
-				551FD5121D8D66C100DD6500 /* ChecklistViewController.h */,
-				551FD5131D8D66C100DD6500 /* ChecklistViewController.m */,
-				551FD5141D8D66C100DD6500 /* IconPickerViewController.h */,
-				551FD5151D8D66C100DD6500 /* IconPickerViewController.m */,
-				551FD5161D8D66C100DD6500 /* ItemDetailViewController.h */,
-				551FD5171D8D66C100DD6500 /* ItemDetailViewController.m */,
-				551FD5181D8D66C100DD6500 /* ListDetailViewController.h */,
-				551FD5191D8D66C100DD6500 /* ListDetailViewController.m */,
+				5532F1771D8D7B7E0086FB96 /* Login */,
+				5532F1761D8D7B6A0086FB96 /* Listitem */,
+				5532F1751D8D7B230086FB96 /* List */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -124,6 +131,7 @@
 		5523E1D31D827D3100D06C7A /* X'Checklists */ = {
 			isa = PBXGroup;
 			children = (
+				5532F16D1D8D7A0B0086FB96 /* ThirdParty */,
 				551FD51A1D8D66C100DD6500 /* Model */,
 				551FD50C1D8D66C100DD6500 /* View */,
 				551FD50F1D8D66C100DD6500 /* Controller */,
@@ -141,6 +149,56 @@
 				5523E1D51D827D3100D06C7A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5532F16D1D8D7A0B0086FB96 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				5532F16E1D8D7A0B0086FB96 /* KKGestureLockView */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		5532F16E1D8D7A0B0086FB96 /* KKGestureLockView */ = {
+			isa = PBXGroup;
+			children = (
+				5532F16F1D8D7A0B0086FB96 /* KKGestureLockView.h */,
+				5532F1701D8D7A0B0086FB96 /* KKGestureLockView.m */,
+			);
+			path = KKGestureLockView;
+			sourceTree = "<group>";
+		};
+		5532F1751D8D7B230086FB96 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				551FD5101D8D66C100DD6500 /* AllListsViewController.h */,
+				551FD5111D8D66C100DD6500 /* AllListsViewController.m */,
+				551FD5181D8D66C100DD6500 /* ListDetailViewController.h */,
+				551FD5191D8D66C100DD6500 /* ListDetailViewController.m */,
+				551FD5141D8D66C100DD6500 /* IconPickerViewController.h */,
+				551FD5151D8D66C100DD6500 /* IconPickerViewController.m */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		5532F1761D8D7B6A0086FB96 /* Listitem */ = {
+			isa = PBXGroup;
+			children = (
+				551FD5121D8D66C100DD6500 /* ChecklistViewController.h */,
+				551FD5131D8D66C100DD6500 /* ChecklistViewController.m */,
+				551FD5161D8D66C100DD6500 /* ItemDetailViewController.h */,
+				551FD5171D8D66C100DD6500 /* ItemDetailViewController.m */,
+			);
+			name = Listitem;
+			sourceTree = "<group>";
+		};
+		5532F1771D8D7B7E0086FB96 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5532F1781D8D7BA30086FB96 /* LoginViewController.h */,
+				5532F1791D8D7BA30086FB96 /* LoginViewController.m */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +262,7 @@
 			files = (
 				5523E1E11D827D3100D06C7A /* Assets.xcassets in Resources */,
 				551FD5221D8D66C100DD6500 /* Main.storyboard in Resources */,
+				5532F17C1D8D81480086FB96 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,11 +275,14 @@
 			files = (
 				551FD5281D8D66C100DD6500 /* Checklist.m in Sources */,
 				551FD52A1D8D66C100DD6500 /* DataModel.m in Sources */,
+				5532F17A1D8D7BA30086FB96 /* LoginViewController.m in Sources */,
 				551FD5211D8D66C100DD6500 /* AppDelegate.m in Sources */,
 				551FD5291D8D66C100DD6500 /* ChecklistItem.m in Sources */,
+				5532F1711D8D7A0B0086FB96 /* KKGestureLockView.m in Sources */,
 				551FD5251D8D66C100DD6500 /* IconPickerViewController.m in Sources */,
 				551FD5271D8D66C100DD6500 /* ListDetailViewController.m in Sources */,
 				551FD5241D8D66C100DD6500 /* ChecklistViewController.m in Sources */,
+				5532F1741D8D7A510086FB96 /* AppDelegate+LockView.m in Sources */,
 				5523E1D61D827D3100D06C7A /* main.m in Sources */,
 				551FD5261D8D66C100DD6500 /* ItemDetailViewController.m in Sources */,
 				551FD5231D8D66C100DD6500 /* AllListsViewController.m in Sources */,

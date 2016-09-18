@@ -55,7 +55,8 @@
 {
     Checklist *checklist = self.checklistToEdit;
     if (checklist == nil) {
-        checklist = [[Checklist alloc] initWithName:self.textField.text];
+        checklist = [[Checklist alloc] init ];
+        checklist.name = self.textField.text;
         checklist.iconName = self.iconName;
         [self.delegate listDetailViewController:self didFinishAddingChecklist:checklist];
     } else {

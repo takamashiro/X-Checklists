@@ -31,9 +31,10 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     BOOL firstTime = [userDefaults boolForKey:@"FirstTime"];
     if(firstTime) {
-        Checklist *checklist = [[Checklist alloc]initWithName:@"List"];
+        Checklist *checklist = [[Checklist alloc]init];
+        checklist.name = @"List";
         [self.lists addObject:checklist];
-        self.indexOfSelectedChecklist = 0;
+        [self setIndexOfSelectedChecklist:0];
         [userDefaults setBool:NO forKey:@"FirstTime"];
         [userDefaults synchronize];
     }
