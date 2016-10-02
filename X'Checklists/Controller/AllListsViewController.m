@@ -11,6 +11,7 @@
 
 @interface AllListsViewController ()
 @property (nonatomic, strong) ZFModalTransitionAnimator *animator;
+@property (nonnull,strong) UILabel *label;
 @end
 
 @implementation AllListsViewController
@@ -53,8 +54,9 @@
         Checklist *checklist = self.dataModel.lists[index];
         [self performSegueWithIdentifier:@"ShowChecklist" sender:checklist];
     }
-    
-    [self.tableView reloadData];
+
+    [self updateFooterLabel];
+    //[self.tableView reloadData];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -90,6 +92,7 @@
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%zd Remaining",count];
     }
     cell.imageView.image = [UIImage imageNamed:checklist.iconName];
+    [self updateFooterLabel];
     return cell;
 }
 
@@ -118,6 +121,8 @@
     NSArray *indexPaths = @[indexPath];
     
     [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+
+    [self updateFooterLabel];
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
@@ -168,5 +173,28 @@
     if (viewController == self) {
         [self.dataModel setIndexOfSelectedChecklist: -1];
     }
+}
+
+- (void)setupFooterLabel{
+    self.label = [[UILabel alloc] init];
+    self.label.frame = CGRectMake(0, self.view.frame.size.height / 2, self.view.frame.size.width,50);
+    [self.tableView.tableFooterView addSubview:self.label];
+    self.label.textAlignment = NSTextAlignmentCenter;
+    self.label.textColor = [UIColor lightTextColor];
+    UIFont *font = [UIFont systemFontOfSize:19.0];
+    self.label.font = font;
+    
+}
+- (void)updateFooterLabel {
+    if (_label == nil) {
+        [self setupFooterLabel];
+    }
+    if (self.dataModel.lists.count == 0) {
+        self.label.text = @"还没有列表哦，点右上小加号添加一个吧";
+    }else {
+        self.label.text = [NSString stringWithFormat:@"%zd个列表",self.dataModel.lists.count];
+        
+    }
+
 }
 @end
